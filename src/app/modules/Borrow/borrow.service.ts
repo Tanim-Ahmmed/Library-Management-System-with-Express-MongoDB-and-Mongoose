@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import Book from "../Book/books.model";
 import { IBorrow } from "./borrow.interface";
 import Borrow from "./borrow.model";
@@ -5,6 +6,10 @@ import Borrow from "./borrow.model";
 const borrowBooks = async (payload: IBorrow)=>{
     
     const {book: bookId, quantity, dueDate} = payload;
+
+    if (!mongoose.Types.ObjectId.isValid(bookId)) {
+    throw new Error('Invalid book ID');
+  }
 
 const book = await Book.findById(bookId);
    if (!book) {
