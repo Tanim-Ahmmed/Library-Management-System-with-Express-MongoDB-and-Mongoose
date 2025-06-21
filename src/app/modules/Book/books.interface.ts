@@ -17,7 +17,7 @@ export interface IBooksMethods {
 }
 
 
-export type IBooksModel = Model<IBooks, {}, IBooksMethods>;
+export type IBooksModel = Model<IBooks, IBooksMethods>;
 
 export interface IBooksPayload {
     filter?: string;

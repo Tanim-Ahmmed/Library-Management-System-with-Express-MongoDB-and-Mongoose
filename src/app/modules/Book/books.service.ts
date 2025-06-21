@@ -7,7 +7,7 @@ const createBook = async (payload: IBooks)=>{
 
 const getAllBooks = async (query: IBooksPayload) =>{
     const {filter, sortBy = 'createdAt', sort ='desc', limit = '10'} = query;
-    const filteredQuery: Record<string, any> = {};
+    const filteredQuery: Record<string, unknown> = {};
 
     if (filter) {
         filteredQuery.genre = filter;
