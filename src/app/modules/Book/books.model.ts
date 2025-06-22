@@ -43,6 +43,8 @@ const bookSchema = new Schema<IBooks, IBooksModel, IBooksMethods>({
     versionKey: false
 });
 
+
+
 bookSchema.method('updateCopies', async function (quantity: number){
   if (this.copies < quantity){
     throw new Error('enough copies are not available');
@@ -53,6 +55,16 @@ bookSchema.method('updateCopies', async function (quantity: number){
     }
     await this.save();
 
+})
+
+
+
+//middlewware runs before saving books
+
+
+bookSchema.pre('save', function (next) {
+    console.log(`book titled ${this.title} is being saved`);
+    next();
 })
 
   const Book = model<IBooks, IBooksModel>('Book', bookSchema);
