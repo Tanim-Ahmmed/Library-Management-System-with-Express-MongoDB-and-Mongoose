@@ -3,7 +3,7 @@
 A RESTful API built with **Node.js**, **Express.js**, **TypeScript**, and **MongoDB** to manage books and borrowing operations for a library system.The Library Management System, a backend application designed to manage books and borrowing operations efficiently in a digital library environment. This system focuses on creating a seamless experience for managing inventory and borrowing records using modern RESTful API practices.
 ---
 
-**Live URL**: [Visit the live site](https://chill-gamer-3c8fa.web.app/)
+**Live URL**: [Visit the live site](https://library-management-system-pi-lake.vercel.app/)
 
 ##  Features
 
