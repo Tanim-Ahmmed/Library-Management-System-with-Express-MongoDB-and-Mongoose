@@ -54,19 +54,19 @@ npm run dev
 
 **GET /** → Welcome message
 
-**POST /books** → Create a new book
+**POST /api/books** → Create a new book
 
-**GET /books** → Get all books (with optional filters: genre, sort, limit)
+**GET /api/books** → Get all books (with optional filters: genre, sort, limit)
 
-**GET /books/:bookId** → Get a specific book by ID
+**GET /api/books/:bookId** → Get a specific book by ID
 
-**PATCH /books/:bookId** → Update a book
+**Put /api/books/:bookId** → Update a book
 
-**DELETE /books/:bookId** → Delete a book
+**DELETE /api/books/:bookId** → Delete a book
 
-**POST /borrow** → Borrow a book
+**POST /api/borrow** → Borrow a book
 
-**GET /borrow** → Get total borrowed summary by book
+**GET /api/borrow** → Get total borrowed summary by book
 
 
 ## Project File Structure 

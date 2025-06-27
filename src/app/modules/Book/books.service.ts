@@ -27,11 +27,15 @@ const getAllBooks = async (query: IBooksPayload) =>{
     return await Book.findById(id);
 }
 
-  const updateBook = async (id: string, payload: Partial<IBooks>) => {
-    return await Book.findByIdAndUpdate(id, payload, {
-        new: true,
-    });
-}
+const updateBook = async (id: string, payload: IBooks) => {
+    const result = await Book.replaceOne({ _id: id }, payload);
+
+    if (result.modifiedCount === 0) {
+        throw new Error('Book not found or not modified');
+    }
+    return await Book.findById(id);
+};
+
 
 const deleteBook = async (id: string) => {
     return await Book.findByIdAndDelete(id);
